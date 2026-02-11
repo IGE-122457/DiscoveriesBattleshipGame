@@ -3,7 +3,10 @@
 Este repositório contém o desenvolvimento do jogo de estratégia naval focado na era dos Descobrimentos.
 
 ## 👥 Equipa
-| 122457 | António Namniyek | Informática e Gestão de Empresas | 
+
+| Número | Nome Completo | Curso |
+| :--- | :--- | :--- |
+| 122457 | António Namniyek | Informática e Gestão de Empresas |
 | 122478 | Gonçalo Silva | Informática e Gestão de Empresas |
 | 122482 | Leonardo Teodoro | Informática e Gestão de Empresas |
 | 122488 | Tiago Soeiro | Informática e Gestão de Empresas |
