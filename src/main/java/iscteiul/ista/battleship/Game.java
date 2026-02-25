@@ -217,6 +217,7 @@ public class Game implements IGame {
      * Prints the board showing the fleet positions.
      * Ship positions are represented with the character '#'.
      */
+
     public void printFleet() {
         List<IPosition> shipPositions = new ArrayList<IPosition>();
 
