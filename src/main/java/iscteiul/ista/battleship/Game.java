@@ -116,6 +116,7 @@ public class Game implements IGame {
         return this.countRepeatedShots;
     }
 
+
     /**
      * Returns the number of invalid shots.
      *
