@@ -1,0 +1,12 @@
+name: Pull Request Notification
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show PR info
+        run: echo "A new Pull Request was opened!"
