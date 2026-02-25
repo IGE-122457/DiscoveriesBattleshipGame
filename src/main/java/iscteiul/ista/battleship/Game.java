@@ -23,6 +23,7 @@ public class Game implements IGame {
     /**
      * @param fleet
      */
+
     public Game(IFleet fleet) {
         shots = new ArrayList<>();
         countInvalidShots = 0;
@@ -35,7 +36,7 @@ public class Game implements IGame {
      *
      * @see battleship.IGame#fire(battleship.IPosition)
      */
-    @Override
+
     public IShip fire(IPosition pos) {
         if (!validShot(pos))
             countInvalidShots++;
@@ -63,7 +64,7 @@ public class Game implements IGame {
      *
      * @see battleship.IGame#getShots()
      */
-    @Override
+
     public List<IPosition> getShots() {
         return shots;
     }
@@ -103,7 +104,7 @@ public class Game implements IGame {
      *
      * @see battleship.IGame#getSunkShips()
      */
-    @Override
+
     public int getSunkShips() {
         return this.countSinks;
     }
@@ -113,7 +114,7 @@ public class Game implements IGame {
      *
      * @see battleship.IGame#getRemainingShips()
      */
-    @Override
+
     public int getRemainingShips() {
         List<IShip> floatingShips = fleet.getFloatingShips();
         return floatingShips.size();
