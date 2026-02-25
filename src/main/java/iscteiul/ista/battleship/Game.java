@@ -111,7 +111,7 @@ public class Game implements IGame {
      *
      * @return number of repeated shots
      */
-    @Override
+
     public int getRepeatedShots() {
         return this.countRepeatedShots;
     }
@@ -122,7 +122,7 @@ public class Game implements IGame {
      *
      * @return number of invalid shots
      */
-    @Override
+
     public int getInvalidShots() {
         return this.countInvalidShots;
     }
