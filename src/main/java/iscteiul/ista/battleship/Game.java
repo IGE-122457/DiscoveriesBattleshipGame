@@ -132,7 +132,7 @@ public class Game implements IGame {
      *
      * @return number of hits
      */
-    @Override
+
     public int getHits() {
         return this.countHits;
     }
