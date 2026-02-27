@@ -1,4 +1,18 @@
 # Battleship
+
+
+# Parte 2 - C. Reflita: Quais as diferenças entre trabalhar via web e via IDE? Em que situações é preferível cada abordagem?
+
+1. Trabalhar via web é mais simples e acessível, não requer instalação e é adequado para projetos pequenos, aprendizagem ou colaboração rápida. No entanto, oferece menos funcionalidades.
+Trabalhar via IDE fornece um ambiente completo com ferramentas avançadas de desenvolvimento, depuração e documentação, sendo mais indicado para projetos médios ou grandes.
+A escolha depende da complexidade do projeto e do nível de controlo e produtividade pretendidos.
+
+
+
+
+
+
+
 # Projeto: Grupo dos Fixes
 Este repositório contém o desenvolvimento do jogo de estratégia naval focado na era dos Descobrimentos.
 
