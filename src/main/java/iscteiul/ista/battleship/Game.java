@@ -47,6 +47,7 @@ public class Game implements IGame {
      *
      * @param fleet the fleet to be used in the game
      */
+
     public Game(IFleet fleet) {
         shots = new ArrayList<>();
         countInvalidShots = 0;
@@ -73,7 +74,7 @@ public class Game implements IGame {
      * @param pos the position being targeted
      * @return the sunk ship if the shot caused a ship to sink; {@code null} otherwise
      */
-    @Override
+
     public IShip fire(IPosition pos) {
         if (!validShot(pos))
             countInvalidShots++;
@@ -101,7 +102,7 @@ public class Game implements IGame {
      *
      * @return list of fired shot positions
      */
-    @Override
+
     public List<IPosition> getShots() {
         return shots;
     }
@@ -142,7 +143,7 @@ public class Game implements IGame {
      *
      * @return number of sunk ships
      */
-    @Override
+
     public int getSunkShips() {
         return this.countSinks;
     }
@@ -152,7 +153,7 @@ public class Game implements IGame {
      *
      * @return number of remaining ships
      */
-    @Override
+
     public int getRemainingShips() {
         List<IShip> floatingShips = fleet.getFloatingShips();
         return floatingShips.size();
