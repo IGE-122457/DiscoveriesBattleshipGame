@@ -32,9 +32,6 @@ public class Fleet implements IFleet {
             System.out.println(ship);
     }
 
-    /**
-     * The list of ships belonging to this fleet.
-     */
     private List<IShip> ships;
 
     /**
