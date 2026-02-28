@@ -2,6 +2,8 @@
 
 ---
 
+NOTA: O TSoeiro19 é o IGE-122488
+
 ##  Parte 1 – Especificação de Requisitos  
 ### E.3. Considere que é o Product Owner dessa app. Em seu entender, que requisitos adicionais lhe faltam? Por outras palavras, qual deverá ser o Product Backlog?
 
