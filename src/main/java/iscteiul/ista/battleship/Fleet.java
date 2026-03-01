@@ -1,70 +1,40 @@
+/**
+ *
+ */
 package iscteiul.ista.battleship;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Represents a fleet of ships in the Battleship game.
- *
- * <p>
- * A Fleet is responsible for storing ships, validating their placement,
- * preventing collisions, and providing information about their state.
- * </p>
- *
- * <p>
- * It ensures that:
- * <ul>
- *   <li>Ships are inside board boundaries</li>
- *   <li>Ships do not collide or overlap</li>
- *   <li>The fleet does not exceed the maximum allowed size</li>
- * </ul>
- * </p>
- */
 public class Fleet implements IFleet {
-
     /**
-     * Prints a list of ships to the standard output.
+     * This operation prints all the given ships
      *
-     * @param ships the list of ships to print
+     * @param ships The list of ships
      */
     static void printShips(List<IShip> ships) {
         for (IShip ship : ships)
             System.out.println(ship);
     }
 
+    // -----------------------------------------------------
+
+
     private List<IShip> ships;
 
-    /**
-     * Creates an empty fleet.
-     */
     public Fleet() {
         ships = new ArrayList<>();
     }
 
-    /**
-     * Returns all ships in the fleet.
-     *
-     * @return the list of ships
-     */
     @Override
     public List<IShip> getShips() {
         return ships;
     }
 
-    /**
-     * Adds a ship to the fleet if all placement rules are respected.
+    /*
+     * (non-Javadoc)
      *
-     * <p>
-     * A ship is added only if:
-     * <ul>
-     *   <li>The fleet size limit is not exceeded</li>
-     *   <li>The ship is inside board boundaries</li>
-     *   <li>The ship does not collide with existing ships</li>
-     * </ul>
-     * </p>
-     *
-     * @param s the ship to add
-     * @return true if the ship was successfully added, false otherwise
+     * @see battleship.IFleet#addShip(battleship.IShip)
      */
     @Override
     public boolean addShip(IShip s) {
@@ -76,11 +46,10 @@ public class Fleet implements IFleet {
         return result;
     }
 
-    /**
-     * Returns all ships that belong to a given category.
+    /*
+     * (non-Javadoc)
      *
-     * @param category the category of ships to filter
-     * @return a list of ships matching the given category
+     * @see battleship.IFleet#getShipsLike(java.lang.String)
      */
     @Override
     public List<IShip> getShipsLike(String category) {
@@ -92,10 +61,10 @@ public class Fleet implements IFleet {
         return shipsLike;
     }
 
-    /**
-     * Returns all ships that are still floating (not sunk).
+    /*
+     * (non-Javadoc)
      *
-     * @return a list of ships that are still floating
+     * @see battleship.IFleet#getFloatingShips()
      */
     @Override
     public List<IShip> getFloatingShips() {
@@ -107,11 +76,10 @@ public class Fleet implements IFleet {
         return floatingShips;
     }
 
-    /**
-     * Returns the ship occupying a given position.
+    /*
+     * (non-Javadoc)
      *
-     * @param pos the position to check
-     * @return the ship occupying the position, or null if none exists
+     * @see battleship.IFleet#shipAt(battleship.IPosition)
      */
     @Override
     public IShip shipAt(IPosition pos) {
@@ -121,26 +89,11 @@ public class Fleet implements IFleet {
         return null;
     }
 
-    /**
-     * Verifies whether a ship is completely inside board boundaries.
-     *
-     * @param s the ship to validate
-     * @return true if the ship is inside the board, false otherwise
-     */
     private boolean isInsideBoard(IShip s) {
-        return (s.getLeftMostPos() >= 0 &&
-                s.getRightMostPos() <= BOARD_SIZE - 1 &&
-                s.getTopMostPos() >= 0 &&
-                s.getBottomMostPos() <= BOARD_SIZE - 1);
+        return (s.getLeftMostPos() >= 0 && s.getRightMostPos() <= BOARD_SIZE - 1 && s.getTopMostPos() >= 0
+                && s.getBottomMostPos() <= BOARD_SIZE - 1);
     }
 
-    /**
-     * Checks whether adding a ship would cause a collision
-     * or violate minimum distance constraints.
-     *
-     * @param s the ship to validate
-     * @return true if there is a collision risk, false otherwise
-     */
     private boolean colisionRisk(IShip s) {
         for (int i = 0; i < ships.size(); i++) {
             if (ships.get(i).tooCloseTo(s))
@@ -149,9 +102,9 @@ public class Fleet implements IFleet {
         return false;
     }
 
+
     /**
-     * Prints a full status report of the fleet,
-     * including all ships and their categories.
+     * This operation shows the state of a fleet
      */
     public void printStatus() {
         printAllShips();
@@ -164,26 +117,29 @@ public class Fleet implements IFleet {
     }
 
     /**
-     * Prints all ships belonging to a given category.
+     * This operation prints all the ships of a fleet belonging to a particular
+     * category
      *
-     * @param category the category of ships to display
+     * @param category The category of ships of interest
      */
     public void printShipsByCategory(String category) {
         assert category != null;
+
         printShips(getShipsLike(category));
     }
 
     /**
-     * Prints all ships that are still floating.
+     * This operation prints all the ships of a fleet but not yet shot
      */
     public void printFloatingShips() {
         printShips(getFloatingShips());
     }
 
     /**
-     * Prints all ships in the fleet.
+     * This operation prints all the ships of a fleet
      */
     void printAllShips() {
         printShips(ships);
     }
+
 }
