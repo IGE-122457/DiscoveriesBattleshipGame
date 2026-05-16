@@ -10,7 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Tasks {
-    private static final Logger LOGGER = LogManager.getLogger();
+    private static final Logger LOGGER = LogManager.getLogger(Tasks.class);
 
     private static final int NUMBER_SHOTS = 3;
 
@@ -159,7 +159,7 @@ public class Tasks {
         assert in != null;
 
         Fleet fleet = new Fleet();
-        int i = 0; // i represents the total of successfully created ships
+        int i = 0;
 
         while (i <= Fleet.FLEET_SIZE) {
             IShip s = readShip(in);
@@ -217,7 +217,5 @@ public class Tasks {
             if (sh != null)
                 LOGGER.info("Mas... mas... {}s nao sao a prova de bala? :-(", sh.getCategory());
         }
-
     }
-
 }
