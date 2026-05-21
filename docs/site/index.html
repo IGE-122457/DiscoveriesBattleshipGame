@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship — Grupo dos Fixes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a2540 0%, #1e3a5f 100%);
+            color: #e8eef5;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 3px solid #4a90e2;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #a8c5e0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 4px solid #4a90e2;
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            color: #4a90e2;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid rgba(74, 144, 226, 0.3);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #6cb0e8;
+            margin: 20px 0 10px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "⚓";
+            position: absolute;
+            left: 0;
+            color: #4a90e2;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th {
+            background: rgba(74, 144, 226, 0.3);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: rgba(74, 144, 226, 0.1);
+        }
+
+        .ship-card {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .ship {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .ship:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3);
+        }
+
+        .ship h4 {
+            color: #4a90e2;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: #6cb0e8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #4a90e2;
+        }
+
+        .links-section a {
+            display: inline-block;
+            background: #4a90e2;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            margin: 5px 10px 5px 0;
+            transition: background 0.2s;
+        }
+
+        .links-section a:hover {
+            background: #6cb0e8;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #a8c5e0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+        }
+
+        .note {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.5em; }
+            section { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>⚓ Battleship</h1>
+    <p>Jogo de Estratégia Naval — Era dos Descobrimentos</p>
+    <p style="margin-top: 10px; font-size: 1em;">Grupo dos Fixes 🚀</p>
+</header>
+
+<div class="container">
+
+    <div class="note">
+        <strong>📌 Nota:</strong> O TSoeiro19 corresponde ao IGE-122488
+    </div>
+
+    <section>
+        <h2>👥 Equipa</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Número</th>
+                <th>Nome Completo</th>
+                <th>Curso</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td>122457</td><td>António Namniyek</td><td>Informática e Gestão de Empresas</td></tr>
+            <tr><td>122478</td><td>Gonçalo Silva</td><td>Informática e Gestão de Empresas</td></tr>
+            <tr><td>122482</td><td>Leonardo Teodoro</td><td>Informática e Gestão de Empresas</td></tr>
+            <tr><td>122488</td><td>Tiago Soeiro</td><td>Informática e Gestão de Empresas</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>🚢 Tipos de Navios</h2>
+        <p>No jogo, as unidades disponíveis baseiam-se na frota histórica portuguesa:</p>
+        <div class="ship-card">
+            <div class="ship">
+                <h4>Nau</h4>
+                <p>Navio de grande porte, resistente e com elevada capacidade de carga.</p>
+            </div>
+            <div class="ship">
+                <h4>Caravela</h4>
+                <p>Veloz e manobrável, ideal para exploração e navegação costeira.</p>
+            </div>
+            <div class="ship">
+                <h4>Galeão</h4>
+                <p>Unidade militar poderosa, fortemente armada para combate naval.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>📜 Regras do Jogo</h2>
+        <ul>
+            <li><strong>Posicionamento:</strong> Cada jogador coloca a sua frota num tabuleiro de 10×10.</li>
+            <li><strong>Turnos:</strong> Os jogadores alternam disparos, indicando coordenadas (ex.: A5, B2).</li>
+            <li><strong>Objetivo:</strong> Ganha o jogador que afundar todos os navios da frota adversária.</li>
+            <li><strong>Restrições:</strong> Os navios não se podem sobrepor nem ultrapassar os limites do tabuleiro.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>📋 Product Backlog</h2>
+        <p>Requisitos adicionais identificados como Product Owner:</p>
+        <ul>
+            <li>Como jogador, quero posicionar os meus navios de forma válida, garantindo um jogo justo.</li>
+            <li>Como jogador, quero que o sistema valide os tiros, impedindo coordenadas inválidas ou repetidas.</li>
+            <li>Como jogador, quero ver claramente o resultado de cada tiro (água, acerto ou navio afundado).</li>
+            <li>Como jogador, quero visualizar o estado da frota adversária e identificar os navios já afundados.</li>
+            <li>Como jogador, quero que o sistema controle automaticamente os turnos e as rondas.</li>
+            <li>Como jogador, quero que o jogo detete o fim da partida e anuncie o vencedor.</li>
+            <li>Como utilizador, quero reiniciar ou iniciar um novo jogo facilmente.</li>
+            <li>Como utilizador, quero mensagens de erro claras sempre que ocorre uma jogada inválida.</li>
+            <li>Como utilizador, quero consultar o histórico de jogadas, para acompanhar o progresso do jogo.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>💭 Reflexão — Web vs IDE</h2>
+        <p>Trabalhar via <strong>web</strong> é mais simples e acessível, não requer instalação local e é adequado
+            para projetos pequenos, aprendizagem ou colaboração rápida. No entanto, oferece menos funcionalidades avançadas.</p>
+        <p style="margin-top: 15px;">Trabalhar via <strong>IDE</strong> proporciona um ambiente de desenvolvimento completo,
+            com ferramentas de apoio à escrita de código, depuração, testes e documentação, sendo mais indicado para
+            projetos de média ou grande dimensão.</p>
+        <p style="margin-top: 15px;">A escolha entre as duas abordagens depende da complexidade do projeto e do nível
+            de controlo e produtividade pretendidos.</p>
+    </section>
+
+    <section class="links-section">
+        <h2>🔗 Documentação Técnica</h2>
+        <p style="margin-bottom: 15px;">Consulta a documentação técnica gerada automaticamente:</p>
+        <a href="../index.html">📖 Site Maven</a>
+        <a href="../apidocs/index.html">☕ Javadoc API</a>
+    </section>
+
+    <section>
+        <h2>📚 Referências Históricas</h2>
+        <ul>
+            <li><a href="https://pt.wikipedia.org/wiki/Caravela" target="_blank">A Caravela — Wikipedia</a></li>
+            <li><a href="https://pt.wikipedia.org/wiki/Nau" target="_blank">As Naus da Carreira da Índia — Wikipedia</a></li>
+        </ul>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Grupo dos Fixes · Battleship · Engenharia de Software · ISCTE-IUL</p>
+</footer>
+
+</body>
+</html>
