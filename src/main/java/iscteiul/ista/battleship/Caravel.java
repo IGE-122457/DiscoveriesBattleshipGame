@@ -1,17 +1,51 @@
-/**
- *
- */
 package iscteiul.ista.battleship;
 
+/**
+ * Represents a Caravel ship in the Battleship game.
+ * <p>
+ * A Caravel is a ship with a fixed size of 2 positions.
+ * Its occupied positions depend on its {@link Compass} bearing:
+ * <ul>
+ *     <li>If facing {@code NORTH} or {@code SOUTH}, it occupies 2 vertical positions.</li>
+ *     <li>If facing {@code EAST} or {@code WEST}, it occupies 2 horizontal positions.</li>
+ * </ul>
+ * </p>
+ *
+ * <p>
+ * The initial position defines the starting coordinate of the ship.
+ * From that point, the remaining positions are calculated according
+ * to the given bearing.
+ * </p>
+ *
+ * @see Ship
+ * @see Compass
+ * @see Position
+ */
 public class Caravel extends Ship {
+
+    /** The fixed size of the Caravel ship. */
     private static final Integer SIZE = 2;
+
+    /** The name identifier of the Caravel ship. */
     private static final String NAME = "Caravela";
 
     /**
-     * @param bearing the bearing where the Caravel heads to
-     * @param pos     initial point for positioning the Caravel
+     * Constructs a Caravel with a given bearing and starting position.
+     *
+     * <p>
+     * The ship positions are automatically calculated and stored
+     * according to the provided bearing.
+     * </p>
+     *
+     * @param bearing the direction in which the Caravel is oriented
+     * @param pos the initial position (starting coordinate) of the Caravel
+     *
+     * @throws NullPointerException if {@code bearing} is {@code null}
+     * @throws IllegalArgumentException if the bearing is invalid
      */
-    public Caravel(Compass bearing, IPosition pos) throws NullPointerException, IllegalArgumentException {
+    public Caravel(Compass bearing, IPosition pos)
+            throws NullPointerException, IllegalArgumentException {
+
         super(Caravel.NAME, bearing, pos);
 
         if (bearing == null)
@@ -23,25 +57,25 @@ public class Caravel extends Ship {
                 for (int r = 0; r < SIZE; r++)
                     getPositions().add(new Position(pos.getRow() + r, pos.getColumn()));
                 break;
+
             case EAST:
             case WEST:
                 for (int c = 0; c < SIZE; c++)
                     getPositions().add(new Position(pos.getRow(), pos.getColumn() + c));
                 break;
+
             default:
                 throw new IllegalArgumentException("ERROR! invalid bearing for the caravel");
         }
-
     }
 
-    /*
-     * (non-Javadoc)
+    /**
+     * Returns the size of the Caravel.
      *
-     * @see battleship.Ship#getSize()
+     * @return the fixed size value (2)
      */
     @Override
     public Integer getSize() {
         return SIZE;
     }
-
 }
